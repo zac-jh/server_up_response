@@ -1,6 +1,14 @@
 <?php
 /**********************************
  *  Server Up Response
+ * 
+ *  If varnish or similar is running need to stop the page being cached there too:
+ * 
+ * if (
+ *     req.url ~ "^/server-up/respond"
+ * ) {
+ *      return (pass);
+ * }
  *********************************/
 
 function server_up_response_menu(){
@@ -8,6 +16,7 @@ function server_up_response_menu(){
         'title' => 'Server Up',
         'page callback' => 'server_up_response_respond',
         'page arguments'=>array(),
+        'access arguments' => array('access content'),
     );
     return $items;
 }
