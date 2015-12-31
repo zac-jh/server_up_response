@@ -1,0 +1,4 @@
+name = Server Up
+description = Responds to server up testing with none cachable pages
+core = 7.x
+package = JamHill
