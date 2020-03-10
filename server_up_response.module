@@ -10,13 +10,22 @@
  *      return (pass);
  * }
  *********************************/
+function server_up_response_permission(){
+    $perms=array(
+        'server_up'=>array(
+          'title'=>'View Server Up',
+          'description'=>'server_up',
+        ),
+    );
+    return $perms;
+}
 
 function server_up_response_menu(){
     $items['server-up/respond'] = array(
         'title' => 'Server Up',
         'page callback' => 'server_up_response_respond',
         'page arguments'=>array(),
-        'access arguments' => array('access content'),
+        'access arguments' => array('server_up'),
     );
     return $items;
 }
